@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { ProfilesContext, UseProfilesState } from './context/profiles'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+
+// ==============================================
+// COMPONENTS
+// ==============================================
+// LAYOUT 
+import Header from './components/layout/Header'
+
+// PROFILES
+import Dashboard from './components/profiles/Dashboard'
+import ProfilesCreate from './components/profiles/ProfilesCreate'
 
 function App() {
+  const profiles = UseProfilesState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Test
-        </a>
-      </header>
+      <BrowserRouter>
+        <ProfilesContext.Provider value={profiles}>
+          <Header />
+          <Dashboard />
+          <Route exact path="/profiles/create" component={ProfilesCreate} />
+        </ProfilesContext.Provider>
+      </BrowserRouter>
     </div>
   );
 }
