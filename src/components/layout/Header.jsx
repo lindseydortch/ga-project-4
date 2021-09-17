@@ -1,4 +1,3 @@
-import { Component } from 'react'  
 import { useProfiles } from '../../context/profiles'
 
 const Header = () => {
@@ -8,7 +7,7 @@ const Header = () => {
       <div>
         <h1>Header</h1>
         <h2>Practicing use context</h2>
-        {
+        {/* {
           pros.map(p => {
             return(
               <div key={p.id}>
@@ -18,7 +17,7 @@ const Header = () => {
               </div>
               )
           })
-        }
+        } */}
       </div>
     )
 

@@ -16,9 +16,7 @@ export function UseProfilesState() {
       .catch(err => console.log(err))
   }, [])
 
-  function createProfile() {
-    return (console.log(`Add profile`))
-  }
+  // pros.forEach(p => console.log(p.id))
 
   return {
     pros,
